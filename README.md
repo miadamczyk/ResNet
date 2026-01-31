@@ -65,7 +65,7 @@ This project requires Python 3.10+ and the following libraries:
 
 ### Installing via `requirements.txt`
 
-1. Create and activate a virtual environment (optional but recommended):
+Create and activate a virtual environment (optional but recommended):
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/macOS
@@ -86,7 +86,7 @@ conda activate resnet
 
 The training and evaluation results for ResNet-34 and ResNet-56 implemented in this repository, run on CIFAR-100 with the default training arguments, can be viewed on Weights & Biases:
 
-https://api.wandb.ai/links/milosz-adamczyk2002/ujekbmck
+[ResNet runs](https://api.wandb.ai/links/milosz-adamczyk2002/ujekbmck)
 
 The runs include logged training and validation loss/accuracy curves, learning rate schedules, and final test performance for both architectures.
 
