@@ -1,5 +1,7 @@
 import torch
 import torch.nn as nn
+from wandb.util import downsample
+
 
 class BasicBlock(nn.Module):
     def __init__(self, in_channels, out_channels, stride=1, downsample=None):
@@ -40,7 +42,8 @@ class ResNet(nn.Module):
         # small number (16) because of small dataset
         self.in_channels = in_channels
 
-        # self.in channels used for more flexibility in architecture's width
+        # originally stem uses: kernel_size=7, stride=2, padding=3
+        # that stem is used for smaller imiges e.g. from CIFAR
         self.conv1 = nn.Conv2d(3, self.in_channels, kernel_size=3, stride=1, padding=1, bias=False)
         self.bn1 = nn.BatchNorm2d(self.in_channels)
         self.relu = nn.ReLU(inplace=True)
